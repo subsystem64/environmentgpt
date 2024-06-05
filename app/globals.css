@@ -1,6 +1,6 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities;s
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -17,5 +17,5 @@
 }
 
 body {
-  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp4468334.jpg&f=1&nofb=1&ipt=98365425821adb42fc2726d3b862e149a9371b68745cfbf97bb5cd4e9552cf6d&ipo=images);
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp4468334.jpg&f=1&nofb=1&ipt=98365425821adb42fc2726d3b862e149a9371b68745cfbf97bb5cd4e9552cf6d&ipo=images');
 }

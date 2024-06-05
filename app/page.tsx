@@ -70,10 +70,14 @@ export default function Home() {
 
   }
 
+  let response = openAIResponse;
+  let responseColor = response.split(",")[0] === 'No' ? 'text-[#6acc6a]' : 'text-[#f57f7f]';
+  let classResponseColour = `text-xl font-bold mb-2 ${responseColor}`;
+  let backgroundImage = response.split(",")[0] === 'No' ? 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcorechristianity-trky.s3.amazonaws.com%2Fwp-content%2Fuploads%2F2020%2F01%2F12141636%2Fcc-eden-scaled.jpg&f=1&nofb=1&ipt=a613dfaf08c4b1845912e3299b2cc60468dfd77fba8fa455b30cf058dfe6e00c&ipo=images' : 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F5087761.jpg&f=1&nofb=1&ipt=8c878cb14f0d865c482c13b207a3462d36d0a4f979612f44b5d77473fce5e4d8&ipo=images';
   return (
-    <div className="min-h-screen flex items-center justify-center text-md">
-      <div className=' bg-[#5689bf] w-full max-w-2xl rounded-lg shadow-md p-8'>
-        <h2 className='text-xl font-bold mb-4 text-white'>EFFECTS OF CLIMATE CHANGE</h2>
+    <div className="min-h-screen flex items-center justify-center text-md" style={{ backgroundImage: `url(${backgroundImage})` }}>
+      <div className=' bg-black w-full max-w-2xl rounded-lg shadow-md p-8'>
+        <h2 className='text-xl font-bold mb-4 text-white'>WORLD OF THE FUTURE</h2>
         { image !== "" ?
           <div className="mb-4 overflow-hidden">
             <img 
@@ -83,7 +87,7 @@ export default function Home() {
           </div>
         :
         <div className="mb-4 p-8 text-center text-white">
-          <p>Upload an image to see the impacts climate change will have on it in the future</p>
+          <p>Upload an image to see if it will be majorly impacted by climate change</p>
         </div>
         }
         
@@ -100,15 +104,17 @@ export default function Home() {
           
           <div className='flex justify-center'>
             <button type="submit" className='p-2 bg-[#f5eb7f] rounded-md mb-4'>
-              Will it exist?
+              Is it impacted?
             </button>
           </div> 
         </form>
-
+        
         {openAIResponse !== "" ?
         <div className="border-t border-gray-300 pt-4]" >
-          <h2 className="text-xl font-bold mb-2 text-[#f5eb7f]">Response</h2>
-          <p className="text-[#f5eb7f]">{openAIResponse}</p>
+          <h2 className={classResponseColour}>
+            {response.split(",")[0].toUpperCase()}
+          </h2>
+          <p className={responseColor}>{response}</p>
         </div>
         :
         null
