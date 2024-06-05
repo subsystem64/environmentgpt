@@ -1,23 +1,10 @@
 "use client"
 import { ChangeEvent, useState, FormEvent } from "react"
-// Create Intial UI
-// Create file upload logic (uploading an image, base64 string)
-// Create the API route logic (POST api/analyzeImage, openai logic)
-// Handle the streaming of data to our frontend (when you see chatGPT talk block by block)
-// Discussion / where to go from here.
 
 export default function Home() {
   const [ image, setImage ] = useState<string>("");
   const [ openAIResponse, setOpenAIResponse ] = useState<string>("");
-  // useState to hold a base64 string.
-  // useState to hold the chatGPT response
 
-  // Image upload logic
-  // 1. User upload an image
-  // 2. We can take the image (all of its data), and convert it into a base64 string
-  // What is a base64 string? It is a string "AJADLSDJAK" that represents an ENTIRE image.
-  // "ENTIRESTRING" -> :)
-  // 3. When we request the API route we create, we will pass the image (string) to the backend.
 
   function handleFileChange(event: ChangeEvent<HTMLInputElement>) {
     if(event.target.files === null) {
@@ -64,12 +51,10 @@ export default function Home() {
       })
     })
     .then(async (response: any) => {
-      // Because we are getting a streaming text response
-      // we have to make some logic to handle the streaming text
+
       const reader = response.body?.getReader();
       setOpenAIResponse("");
-      // reader allows us to read a new piece of info on each "read"
-      // "Hello" + "I am" + "Cooper Codes"  reader.read();
+
       while (true) {
         const { done, value } = await reader?.read();
         // done is true once the response is done
@@ -87,8 +72,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex items-center justify-center text-md">
-      <div className='bg-slate-800 w-full max-w-2xl rounded-lg shadow-md p-8'>
-        <h2 className='text-xl font-bold mb-4'>Uploaded Image</h2>
+      <div className=' bg-[#5689bf] w-full max-w-2xl rounded-lg shadow-md p-8'>
+        <h2 className='text-xl font-bold mb-4 text-white'>EFFECTS OF CLIMATE CHANGE</h2>
         { image !== "" ?
           <div className="mb-4 overflow-hidden">
             <img 
@@ -97,34 +82,33 @@ export default function Home() {
             />
           </div>
         :
-        <div className="mb-4 p-8 text-center">
-          <p>Once you upload an image, you will see it here.</p>
+        <div className="mb-4 p-8 text-center text-white">
+          <p>Upload an image to see the impacts climate change will have on it in the future</p>
         </div>
         }
         
 
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className='flex flex-col mb-6'>
-            <label className='mb-2 text-sm font-medium'>Upload Image</label>
+            <label className='mb-2 text-sm font-medium text-white'>Upload</label>
             <input
               type="file"
-              className="text-sm border rounded-lg cursor-pointer"
+              className="text-sm border rounded-lg cursor-pointer text-white"
               onChange={(e) => handleFileChange(e)}
             />
           </div>
           
           <div className='flex justify-center'>
-            <button type="submit" className='p-2 bg-sky-600 rounded-md mb-4'>
-              Ask ChatGPT To Analyze Your Image
+            <button type="submit" className='p-2 bg-[#f5eb7f] rounded-md mb-4'>
+              Will it exist?
             </button>
           </div> 
-
         </form>
 
         {openAIResponse !== "" ?
-        <div className="border-t border-gray-300 pt-4">
-          <h2 className="text-xl font-bold mb-2">AI Response</h2>
-          <p>{openAIResponse}</p>
+        <div className="border-t border-gray-300 pt-4]" >
+          <h2 className="text-xl font-bold mb-2 text-[#f5eb7f]">Response</h2>
+          <p className="text-[#f5eb7f]">{openAIResponse}</p>
         </div>
         :
         null
