@@ -5,9 +5,9 @@ With so much access to information nowadays, it's easy to get lost or overwhelme
 That's why we created Environment GPT, a quick and easy way to see which of your favorite things will be irreversibly impacted by the climate crisis, powered by GPT-4.
 ## How to use
 
-In `app\api\analyzeImage\route.ts`, replace `YOUR-KEY-HERE` with your own **gpt-4-vision-preview** API key
+First, in `app\api\analyzeImage\route.ts`, replace `YOUR-KEY-HERE` with your own **gpt-4-vision-preview** API key
 
-First, run the development server:
+Run the development server:
 
 ```bash
 npm run dev
