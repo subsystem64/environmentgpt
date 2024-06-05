@@ -5,7 +5,10 @@ With so much access to information nowadays, it's easy to get lost or overwhelme
 That's why we created Environment GPT, a quick and easy way to see which of your favorite things will be irreversibly impacted by the climate crisis, powered by GPT-4.
 ## How to use
 
-First, run the development server:
+
+First, in `app\api\analyzeImage\route.ts`, replace `YOUR-KEY-HERE` with your own **gpt-4-vision-preview** API key
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -19,7 +22,7 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Upload an image of what you want to investigate, and click the button to see if it will be impacted.
+Upload or paste an image of what you want to investigate, and click the button to see if it will be impacted.
 
 <p float="left">
   <img src="screenshots/Chocolate.jpeg" width="400" />

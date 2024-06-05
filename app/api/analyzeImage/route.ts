@@ -22,7 +22,7 @@ export async function POST(request: Request) {
                 role: "user",
                 //@ts-ignore
                 content: [
-                    { type: "text", text: "Given the advances in technology and adaptive strategies in agriculture, will the object in this image face major impacts from climate change? Begin your response with Yes or No followed by a comma, and provide a brief explanation. Respond in 2-3 sentences" },
+                    { type: "text", text: "Given the advances in technology and adaptive strategies, will the object in this image face major impacts from climate change? Begin your response with Yes or No followed by a comma, and provide a brief explanation. Respond in 2-3 sentences" },
                     {
                         type: "image_url",
                         image_url: image // base64 images

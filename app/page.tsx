@@ -1,10 +1,42 @@
 "use client"
-import { ChangeEvent, useState, FormEvent } from "react"
+import { ChangeEvent, useState, useEffect, FormEvent } from "react"
 
 export default function Home() {
   const [ image, setImage ] = useState<string>("");
   const [ openAIResponse, setOpenAIResponse ] = useState<string>("");
 
+
+  useEffect(() => {
+    window.addEventListener('paste', handlePaste);
+    return () => {
+      window.removeEventListener('paste', handlePaste);
+    };
+  }, []);
+
+  function handlePaste(event: ClipboardEvent) {
+    if(event.clipboardData === null) {
+      window.alert("No file selected. Choose a file.")
+      return;
+    }
+    const file = event.clipboardData.files[0];
+
+    // Convert the users file (locally on their computer) to a base64 string
+    // FileReader
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = () => {
+      // reader.result -> base64 string ("ENTIRESTRING" -> :))
+      if(typeof reader.result === "string") {
+        console.log(reader.result);
+        setImage(reader.result);
+      }
+    }
+
+    reader.onerror = (error) => {
+      console.log("error: " + error);
+    }
+  }
 
   function handleFileChange(event: ChangeEvent<HTMLInputElement>) {
     if(event.target.files === null) {
