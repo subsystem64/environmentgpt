@@ -6,7 +6,10 @@ That's why we created Environment GPT, a quick and easy way to see which of your
 ## How to use
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> dace2e98a7e8f425ae1386733e499725c817c5a1
 =======
 >>>>>>> dace2e98a7e8f425ae1386733e499725c817c5a1
 First, in `app\api\analyzeImage\route.ts`, replace `YOUR-KEY-HERE` with your own **gpt-4-vision-preview** API key
