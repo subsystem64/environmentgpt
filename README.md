@@ -21,4 +21,17 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Upload an image of what you want to investigate, and click the button to see if it will be impacted.
 
+<p float="left">
+  <img src="screenshots/Chocolate.jpeg" width="500" />
+  <img src="screenshots/Stone.jpeg" width="500" /> 
+</p>
 
+<p float="left">
+  <img src="screenshots/Vent.jpeg" width="500" /> 
+  <img src="screenshots/Beach.jpeg" width="500" />
+</p>
+
+<p float="left">
+  <img src="screenshots/Dog.jpeg" width="500" />
+  <img src="screenshots/Fortnite.jpeg" width="500" /> 
+</p>
