@@ -7,6 +7,11 @@ That's why we created Environment GPT, a quick and easy way to see which of your
 
 First, in `app\api\analyzeImage\route.ts`, replace `YOUR-KEY-HERE` with your own **gpt-4-vision-preview** API key
 
+Install react:
+```bash
+npm install react react-dom next
+```
+
 Run the development server:
 
 ```bash
