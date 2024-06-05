@@ -29,16 +29,16 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 Upload or paste an image of what you want to investigate, and click the button to see if it will be impacted.
 
 <p float="left">
-  <img src="screenshots/Chocolate.jpeg" width="400" />
-  <img src="screenshots/Stone.jpeg" width="400" /> 
+  <img src="screenshots/tomatoFr.png" width="400" />
+  <img src="screenshots/boulderFr.png" width="400" /> 
 </p>
 
 <p float="left">
-  <img src="screenshots/Vent.jpeg" width="400" /> 
-  <img src="screenshots/Beach.jpeg" width="400" />
+  <img src="screenshots/moonFr.png" width="400" /> 
+  <img src="screenshots/beachFr.png" width="400" />
 </p>
 
 <p float="left">
-  <img src="screenshots/Dog.jpeg" width="400" />
-  <img src="screenshots/Fortnite.jpeg" width="400" /> 
+  <img src="screenshots/catFr.png" width="400" />
+  <img src="screenshots/fortniteFr.png" width="400" /> 
 </p>

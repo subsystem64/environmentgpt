@@ -119,7 +119,7 @@ export default function Home() {
           </div>
         :
         <div className="mb-4 p-8 text-center text-white">
-          <p>Upload an image to see if it will be majorly impacted by climate change</p>
+          <p>Upload or paste an image to see if it will be majorly impacted by climate change</p>
         </div>
         }
         
