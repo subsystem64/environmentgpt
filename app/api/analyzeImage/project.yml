@@ -1,3 +1,0 @@
-environment: { 
-  GPTKEY: ${YOUR-KEY-HERE}
-}
