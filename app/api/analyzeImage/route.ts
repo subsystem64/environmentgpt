@@ -2,7 +2,7 @@ import { Configuration, OpenAIApi } from "openai-edge"
 import { OpenAIStream, StreamingTextResponse } from "ai"
 
 export const runtime = 'edge';
-
+const api_key = process.env.GPTKEY
 const configuration = new Configuration({
     apiKey: "YOUR-KEY-HERE"
 });
