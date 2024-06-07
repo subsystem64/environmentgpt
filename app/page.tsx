@@ -103,13 +103,26 @@ export default function Home() {
   }
 
   let response = openAIResponse;
-  let responseColor = response.split(",")[0] === 'No' ? 'text-[#6acc6a]' : 'text-[#f57f7f]';
-  let classResponseColour = `text-xl font-bold mb-2 ${responseColor}`;
-  let backgroundImage = response.split(",")[0] === 'No' ? 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcorechristianity-trky.s3.amazonaws.com%2Fwp-content%2Fuploads%2F2020%2F01%2F12141636%2Fcc-eden-scaled.jpg&f=1&nofb=1&ipt=a613dfaf08c4b1845912e3299b2cc60468dfd77fba8fa455b30cf058dfe6e00c&ipo=images' : 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F5087761.jpg&f=1&nofb=1&ipt=8c878cb14f0d865c482c13b207a3462d36d0a4f979612f44b5d77473fce5e4d8&ipo=images';
+  let responseYesNo = response.split(",")[0];
+  let responseColor = responseYesNo === 'No' ? 'text-[#6acc6a]' : 'text-[#f57f7f]';
+  let classResponseColor = `text-xl font-bold mb-2 ${responseColor}`;
+  let backgroundImage;
+  if (responseYesNo === 'No') {
+    backgroundImage = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcorechristianity-trky.s3.amazonaws.com%2Fwp-content%2Fuploads%2F2020%2F01%2F12141636%2Fcc-eden-scaled.jpg&f=1&nofb=1&ipt=a613dfaf08c4b1845912e3299b2cc60468dfd77fba8fa455b30cf058dfe6e00c&ipo=images';
+  } else if (responseYesNo === 'Yes') {
+    backgroundImage = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F5087761.jpg&f=1&nofb=1&ipt=8c878cb14f0d865c482c13b207a3462d36d0a4f979612f44b5d77473fce5e4d8&ipo=images';
+  } else {
+    backgroundImage = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp4468334.jpg&f=1&nofb=1&ipt=98365425821adb42fc2726d3b862e149a9371b68745cfbf97bb5cd4e9552cf6d&ipo=images';
+  }
   return (
     <div className="min-h-screen flex items-center justify-center text-md" style={{ backgroundImage: `url(${backgroundImage})` }}>
       <div className=' bg-black w-full max-w-2xl rounded-lg shadow-md p-8'>
-        <h2 className='text-xl font-bold mb-4 text-white'>WORLD OF THE FUTURE</h2>
+        <div className="flex justify-between items-center mb-4">
+          <h2 className='text-xl font-bold text-white'>WORLD OF THE FUTURE</h2>
+          <button className="m-4" onClick={() => { console.log('Button clicked!'); }}>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGs67yC8K9HxtSooWsdV3LsnwGHUsMmZTeRg&s" width="30" alt="Button Image" />
+          </button>
+        </div>
         { image !== "" ?
           <div className="mb-4 overflow-hidden">
             <img 
@@ -143,8 +156,8 @@ export default function Home() {
         
         {openAIResponse !== "" ?
         <div className="border-t border-gray-300 pt-4]" >
-          <h2 className={classResponseColour}>
-            {response.split(",")[0].toUpperCase()}
+          <h2 className={classResponseColor}>
+            {responseYesNo.toUpperCase()}
           </h2>
           <p className={responseColor}>{response}</p>
         </div>
