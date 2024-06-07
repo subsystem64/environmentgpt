@@ -4,6 +4,7 @@ import { ChangeEvent, useState, useEffect, FormEvent } from "react"
 export default function Home() {
   const [ image, setImage ] = useState<string>("");
   const [ openAIResponse, setOpenAIResponse ] = useState<string>("");
+  const [showingInfo, setShowingInfo] = useState(false);
 
 
   useEffect(() => {
@@ -100,7 +101,12 @@ export default function Home() {
       }
     });
 
-  }
+    }
+    function showInfo() {
+      setShowingInfo(!showingInfo);
+    }
+  
+
 
   let response = openAIResponse;
   let responseYesNo = response.split(",")[0];
@@ -119,7 +125,7 @@ export default function Home() {
       <div className=' bg-black w-full max-w-2xl rounded-lg shadow-md p-8'>
         <div className="flex justify-between items-center mb-4">
           <h2 className='text-xl font-bold text-white'>WORLD OF THE FUTURE</h2>
-          <button className="m-4" onClick={() => { console.log('Button clicked!'); }}>
+          <button className="m-4" onClick={showInfo}>
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGs67yC8K9HxtSooWsdV3LsnwGHUsMmZTeRg&s" width="30" alt="Button Image" />
           </button>
         </div>
@@ -135,8 +141,21 @@ export default function Home() {
           <p>Upload or paste an image to see if it will be majorly impacted by climate change</p>
         </div>
         }
+        {showingInfo && (
+          <div className="absolute inset-0 flex items-center justify-center text-md ">
+            <div className="inset-0 bg-[#283544] w-full max-w-2xl rounded-lg shadow-md p-8">
+              <div className="flex items-center justify-center bg-[#283544] p-4 rounded-lg relative">
+              <button className="absolute top-0 right-0" onClick={showInfo}>
+                <img src="https://cdn.discordapp.com/attachments/1200244674603012267/1248678704348139540/image.png?ex=66648a2a&is=666338aa&hm=de103c300a6bdb348ecb0f5b6945e8c9bb58394858934557127d0d45d8ffbf27&" width="30" alt="Close" />
+              </button>
+                <p className='m-2 text-xl text-white'>This is a text box that wil contain information about how this looks, can I add more text for
+                  more lines? or will this just be bad 
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
         
-
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className='flex flex-col mb-6'>
             <label className='mb-2 text-sm font-medium text-white'>Upload</label>
