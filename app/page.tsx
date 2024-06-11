@@ -148,7 +148,7 @@ export default function Home() {
             <div className="inset-0 bg-[#283544] w-full max-w-2xl rounded-lg shadow-md p-8">
               <div className="flex items-center justify-center bg-[#283544] p-4 rounded-lg relative">
               <button className="absolute top-0 right-0" onClick={showInfo}>
-                <img src="https://cdn.discordapp.com/attachments/1200244674603012267/1248678704348139540/image.png?ex=66648a2a&is=666338aa&hm=de103c300a6bdb348ecb0f5b6945e8c9bb58394858934557127d0d45d8ffbf27&" width="30" alt="Close" />
+                <img src="https://media.discordapp.net/attachments/1200244674603012267/1248678704348139540/image.png?ex=6669d02a&is=66687eaa&hm=dfe40303c3f1bf7337ec09973a4f55e68da42f06e0da35927b66fbb862972917&=&format=webp&quality=lossless&width=1404&height=1404" width="30" alt="Close" />
               </button>
                 <p className='m-2 text-xl text-white'>
                   With so much access to information nowadays, it's easy to get lost or overwhelmed. 
