@@ -46,3 +46,5 @@ Upload or paste an image of what you want to investigate, and click the button t
   <img src="screenshots/catFr.png" width="400" />
   <img src="screenshots/fortniteFr.png" width="400" /> 
 </p>
+
+Disclaimer: Environment GPT can make mistakes. Verify important information.
